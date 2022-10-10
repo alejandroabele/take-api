@@ -1,0 +1,812 @@
+{
+  "definition": {
+    "openapi": "3.0.0",
+    "info": {
+      "title": "Take Home Api",
+      "version": "1.1.0"
+    },
+    "servers": [
+      {
+        "url": "http://localhost:9000/api",
+        "description": "Local"
+      }
+    ],
+    "paths": {
+      "/client": {
+        "post": {
+          "tags": ["Clients"],
+
+          "description": "## Servicio para crear clientes",
+          "parameters": [
+            {
+              "name": "name",
+              "in": "body",
+              "type": "string"
+            },
+            {
+              "name": "address",
+              "in": "body",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "city",
+              "in": "body",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "state",
+              "in": "body",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "zip",
+              "in": "body",
+              "type": "number",
+              "required": true
+            },
+            {
+              "name": "headCount",
+              "in": "body",
+              "type": "number",
+              "required": false
+            },
+            {
+              "name": "status",
+              "in": "body",
+              "type": "string",
+              "required": true
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Http status code response 200",
+              "content": {
+                "application/json": {
+                  "example": {
+                    "error": false,
+                    "message": "OK",
+                    "payload": {
+                      "name": "cliente",
+                      "address": "addres",
+                      "city": "city",
+                      "state": "mexico",
+                      "zip": 8300,
+                      "status": "private",
+                      "_id": "63448cef87f41bec10c6a7e5",
+                      "createdAt": "2022-10-10T21:21:51.082Z",
+                      "updatedAt": "2022-10-10T21:21:51.082Z",
+                      "__v": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "get": {
+          "tags": ["Clients"],
+
+          "description": "## Servicio para obtener clientes",
+          "responses": {
+            "200": {
+              "description": "Http status code response 200",
+              "content": {
+                "application/json": {
+                  "example": {
+                    "error": false,
+                    "message": "OK",
+                    "payload": [
+                      {
+                        "_id": "63443463a9a540270d4c63bd",
+                        "companyName": "test",
+                        "createdAt": "2022-10-09T03:35:07.000Z",
+                        "__v": 0
+                      },
+                      {
+                        "_id": "63443d7c4a2e9ece6010e25f",
+                        "name": "Cliente 1",
+                        "createdAt": "2022-10-10T15:42:52.068Z",
+                        "updatedAt": "2022-10-10T15:42:52.068Z",
+                        "__v": 0
+                      },
+                      {
+                        "_id": "6344502374a4405e084961ab",
+                        "name": "cliente",
+                        "createdAt": "2022-10-10T17:02:27.476Z",
+                        "updatedAt": "2022-10-10T17:02:27.476Z",
+                        "__v": 0
+                      },
+                      {
+                        "_id": "63445385939289bf3f71361b",
+                        "name": "cliente",
+                        "state": "argentina",
+                        "createdAt": "2022-10-10T17:16:53.729Z",
+                        "updatedAt": "2022-10-10T17:16:53.729Z",
+                        "__v": 0
+                      },
+                      {
+                        "_id": "6344538c939289bf3f71361d",
+                        "name": "cliente",
+                        "state": "brasil",
+                        "createdAt": "2022-10-10T17:17:00.149Z",
+                        "updatedAt": "2022-10-10T17:17:00.149Z",
+                        "__v": 0
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "put": {
+          "tags": ["Clients"],
+
+          "description": "## Servicio para modificar clientes",
+          "parameters": [
+            {
+              "name": "name",
+              "in": "body",
+              "type": "string"
+            },
+            {
+              "name": "address",
+              "in": "body",
+              "type": "string",
+              "required": false
+            },
+            {
+              "name": "city",
+              "in": "body",
+              "type": "string",
+              "required": false
+            },
+            {
+              "name": "state",
+              "in": "body",
+              "type": "string",
+              "required": false
+            },
+            {
+              "name": "zip",
+              "in": "body",
+              "type": "number",
+              "required": false
+            },
+            {
+              "name": "headCount",
+              "in": "body",
+              "type": "number",
+              "required": false
+            },
+            {
+              "name": "status",
+              "in": "body",
+              "type": "string",
+              "required": false
+            },
+            {
+              "name": "id",
+              "in": "path",
+              "type": "string",
+              "required": true
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Http status code response 200",
+              "content": {
+                "application/json": {
+                  "example": {
+                    "error": false,
+                    "message": "OK",
+                    "payload": {
+                      "name": "cliente",
+                      "address": "addres",
+                      "city": "city",
+                      "state": "mexico",
+                      "zip": 8300,
+                      "status": "private",
+                      "_id": "63448cef87f41bec10c6a7e5",
+                      "createdAt": "2022-10-10T21:21:51.082Z",
+                      "updatedAt": "2022-10-10T21:21:51.082Z",
+                      "__v": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "delete": {
+          "tags": ["Clients"],
+
+          "description": "## Servicio para eliminar clientes",
+          "parameters": [
+            {
+              "name": "name",
+              "in": "body",
+              "type": "string"
+            },
+            {
+              "name": "address",
+              "in": "body",
+              "type": "string",
+              "required": false
+            },
+            {
+              "name": "city",
+              "in": "body",
+              "type": "string",
+              "required": false
+            },
+            {
+              "name": "state",
+              "in": "body",
+              "type": "string",
+              "required": false
+            },
+            {
+              "name": "zip",
+              "in": "body",
+              "type": "number",
+              "required": false
+            },
+            {
+              "name": "headCount",
+              "in": "body",
+              "type": "number",
+              "required": false
+            },
+            {
+              "name": "status",
+              "in": "body",
+              "type": "string",
+              "required": false
+            },
+            {
+              "name": "id",
+              "in": "path",
+              "type": "string",
+              "required": true
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Http status code response 200",
+              "content": {
+                "application/json": {
+                  "example": {
+                    "error": false,
+                    "message": "OK",
+                    "payload": {
+                      "name": "cliente",
+                      "address": "addres",
+                      "city": "city",
+                      "state": "mexico",
+                      "zip": 8300,
+                      "status": "private",
+                      "_id": "63448cef87f41bec10c6a7e5",
+                      "createdAt": "2022-10-10T21:21:51.082Z",
+                      "updatedAt": "2022-10-10T21:21:51.082Z",
+                      "__v": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/client-fuzzy-search": {
+        "get": {
+          "tags": ["Clients"],
+
+          "description": "## Servicio para obtener clientes",
+          "parameters": [
+            {
+              "name": "name",
+              "in": "path",
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Http status code response 200",
+              "content": {
+                "application/json": {
+                  "example": {
+                    "error": false,
+                    "message": "OK",
+                    "payload": [
+                      {
+                        "_id": "63443463a9a540270d4c63bd",
+                        "companyName": "test",
+                        "createdAt": "2022-10-09T03:35:07.000Z",
+                        "__v": 0
+                      },
+                      {
+                        "_id": "63443d7c4a2e9ece6010e25f",
+                        "name": "Cliente 1",
+                        "createdAt": "2022-10-10T15:42:52.068Z",
+                        "updatedAt": "2022-10-10T15:42:52.068Z",
+                        "__v": 0
+                      },
+                      {
+                        "_id": "6344502374a4405e084961ab",
+                        "name": "cliente",
+                        "createdAt": "2022-10-10T17:02:27.476Z",
+                        "updatedAt": "2022-10-10T17:02:27.476Z",
+                        "__v": 0
+                      },
+                      {
+                        "_id": "63445385939289bf3f71361b",
+                        "name": "cliente",
+                        "state": "argentina",
+                        "createdAt": "2022-10-10T17:16:53.729Z",
+                        "updatedAt": "2022-10-10T17:16:53.729Z",
+                        "__v": 0
+                      },
+                      {
+                        "_id": "6344538c939289bf3f71361d",
+                        "name": "cliente",
+                        "state": "brasil",
+                        "createdAt": "2022-10-10T17:17:00.149Z",
+                        "updatedAt": "2022-10-10T17:17:00.149Z",
+                        "__v": 0
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/client-by-state": {
+        "get": {
+          "tags": ["Clients"],
+          "description": "## Servicio para obtener clientes",
+          "parameters": [
+            {
+              "name": "state",
+              "in": "path",
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Http status code response 200",
+              "content": {
+                "application/json": {
+                  "example": {
+                    "error": false,
+                    "message": "OK",
+                    "payload": [
+                      {
+                        "_id": "63443463a9a540270d4c63bd",
+                        "companyName": "test",
+                        "createdAt": "2022-10-09T03:35:07.000Z",
+                        "__v": 0
+                      },
+                      {
+                        "_id": "63443d7c4a2e9ece6010e25f",
+                        "name": "Cliente 1",
+                        "createdAt": "2022-10-10T15:42:52.068Z",
+                        "updatedAt": "2022-10-10T15:42:52.068Z",
+                        "__v": 0
+                      },
+                      {
+                        "_id": "6344502374a4405e084961ab",
+                        "name": "cliente",
+                        "createdAt": "2022-10-10T17:02:27.476Z",
+                        "updatedAt": "2022-10-10T17:02:27.476Z",
+                        "__v": 0
+                      },
+                      {
+                        "_id": "63445385939289bf3f71361b",
+                        "name": "cliente",
+                        "state": "argentina",
+                        "createdAt": "2022-10-10T17:16:53.729Z",
+                        "updatedAt": "2022-10-10T17:16:53.729Z",
+                        "__v": 0
+                      },
+                      {
+                        "_id": "6344538c939289bf3f71361d",
+                        "name": "cliente",
+                        "state": "brasil",
+                        "createdAt": "2022-10-10T17:17:00.149Z",
+                        "updatedAt": "2022-10-10T17:17:00.149Z",
+                        "__v": 0
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "member": {
+        "get": {
+          "tags": ["Members"],
+          "description": "## Servicio para obtener miembros",
+          "responses": {
+            "200": {
+              "description": "Http status code response 200",
+              "content": {
+                "application/json": {
+                  "example": {
+                    "error": false,
+                    "message": "OK",
+                    "payload": [
+                      {
+                        "_id": "6344388c5812ad5b45db765c",
+                        "name": "test",
+                        "createdAt": "2022-10-09T03:35:07.000Z",
+                        "phoneNumber": 2994648600,
+                        "__v": 0
+                      },
+                      {
+                        "_id": "63443a2e1681e4590250d642",
+                        "name": "miembro 2",
+                        "phoneNumber": 2994648600,
+                        "createdAt": "2022-10-10T15:28:46.028Z",
+                        "updatedAt": "2022-10-10T15:28:46.028Z",
+                        "__v": 0
+                      },
+                      {
+                        "_id": "63443ad04a2e9ece6010e25d",
+                        "name": "miembro 2",
+                        "phoneNumber": 2994648600,
+                        "client": "63443d7c4a2e9ece6010e25f",
+                        "createdAt": "2022-10-10T15:31:28.030Z",
+                        "updatedAt": "2022-10-10T15:44:20.693Z",
+                        "__v": 0
+                      },
+                      {
+                        "_id": "63446f8b677844b51a8cc067",
+                        "name": "miembro 2",
+                        "phoneNumber": 2994648600,
+                        "email": "alejandro@abele.com.ar",
+                        "client": "63443463a9a540270d4c63bd",
+                        "createdAt": "2022-10-10T19:16:27.253Z",
+                        "updatedAt": "2022-10-10T19:16:27.253Z",
+                        "__v": 0
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "post": {
+          "tags": ["Members"],
+          "description": "## Servicio para crear miembros",
+          "parameters": [
+            {
+              "name": "name",
+              "in": "body",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "phoneNumber",
+              "in": "body",
+              "type": "number",
+              "required": true
+            },
+            {
+              "name": "email",
+              "in": "body",
+              "type": "string",
+              "required": false
+            },
+            {
+              "name": "client",
+              "in": "body",
+              "type": "objectId",
+              "required": true
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Http status code response 200",
+              "content": {
+                "application/json": {
+                  "example": {
+                    "error": false,
+                    "message": "OK",
+                    "payload": {
+                      "name": "miembro 2",
+                      "phoneNumber": 2994648600,
+                      "email": "alejandro@abele.com.ar",
+                      "client": "63443463a9a540270d4c63bd",
+                      "_id": "6344942ebaa42a8273bd28be",
+                      "createdAt": "2022-10-10T21:52:46.333Z",
+                      "updatedAt": "2022-10-10T21:52:46.333Z",
+                      "__v": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "put": {
+          "tags": ["Members"],
+          "description": "## Servicio para modificar miembros",
+          "parameters": [
+            {
+              "name": "name",
+              "in": "body",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "phoneNumber",
+              "in": "body",
+              "type": "number",
+              "required": true
+            },
+            {
+              "name": "email",
+              "in": "body",
+              "type": "string",
+              "required": false
+            },
+            {
+              "name": "client",
+              "in": "body",
+              "type": "objectId",
+              "required": true
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Http status code response 200",
+              "content": {
+                "application/json": {
+                  "example": {
+                    "error": false,
+                    "message": "OK",
+                    "payload": {
+                      "name": "miembro 2",
+                      "phoneNumber": 2994648600,
+                      "email": "alejandro@abele.com.ar",
+                      "client": "63443463a9a540270d4c63bd",
+                      "_id": "6344942ebaa42a8273bd28be",
+                      "createdAt": "2022-10-10T21:52:46.333Z",
+                      "updatedAt": "2022-10-10T21:52:46.333Z",
+                      "__v": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "delete": {
+          "tags": ["Members"],
+          "description": "## Servicio para eliminar miembros",
+          "parameters": [
+            {
+              "name": "name",
+              "in": "body",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "phoneNumber",
+              "in": "body",
+              "type": "number",
+              "required": true
+            },
+            {
+              "name": "email",
+              "in": "body",
+              "type": "string",
+              "required": false
+            },
+            {
+              "name": "client",
+              "in": "body",
+              "type": "objectId",
+              "required": true
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Http status code response 200",
+              "content": {
+                "application/json": {
+                  "example": {
+                    "error": false,
+                    "message": "OK",
+                    "payload": {
+                      "name": "miembro 2",
+                      "phoneNumber": 2994648600,
+                      "email": "alejandro@abele.com.ar",
+                      "client": "63443463a9a540270d4c63bd",
+                      "_id": "6344942ebaa42a8273bd28be",
+                      "createdAt": "2022-10-10T21:52:46.333Z",
+                      "updatedAt": "2022-10-10T21:52:46.333Z",
+                      "__v": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "note": {
+        "get": {
+          "tags": ["Notes"],
+          "description": "## Servicio para obtener notas",
+          "responses": {
+            "200": {
+              "description": "Http status code response 200",
+              "content": {
+                "application/json": {
+                  "example": {
+                    "error": false,
+                    "message": "OK",
+                    "payload": [
+                      {
+                        "_id": "6344569f1ed54ac5dbc4873e",
+                        "data": "cliente",
+                        "member": "6342417948131eea774e09f9",
+                        "createdAt": "2022-10-10T17:30:07.799Z",
+                        "updatedAt": "2022-10-10T17:30:07.799Z",
+                        "__v": 0
+                      },
+                      {
+                        "_id": "634456af1ed54ac5dbc48740",
+                        "data": "esta es una nota para pepito",
+                        "member": "6342417948131eea774e09f9",
+                        "createdAt": "2022-10-10T17:30:23.873Z",
+                        "updatedAt": "2022-10-10T17:30:23.873Z",
+                        "__v": 0
+                      },
+                      {
+                        "_id": "63446fa4677844b51a8cc069",
+                        "data": "esta es una nota para pepito",
+                        "member": "6342417948131eea774e09f9",
+                        "createdAt": "2022-10-10T19:16:52.652Z",
+                        "updatedAt": "2022-10-10T19:16:52.652Z",
+                        "__v": 0
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "post": {
+          "tags": ["Notes"],
+          "description": "## Servicio para crear notas",
+          "parameters": [
+            {
+              "name": "data",
+              "in": "body",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "member",
+              "in": "body",
+              "type": "objectId",
+              "required": true
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Http status code response 200",
+              "content": {
+                "application/json": {
+                  "example": {
+                    "error": false,
+                    "message": "OK",
+                    "payload": {
+                      "data": "esta es una nota para pepito",
+                      "member": "6342417948131eea774e09f9",
+                      "_id": "63449516f28050c4df6ed9be",
+                      "createdAt": "2022-10-10T21:56:38.632Z",
+                      "updatedAt": "2022-10-10T21:56:38.632Z",
+                      "__v": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "put": {
+          "tags": ["Notes"],
+          "description": "## Servicio para modificar notas",
+          "parameters": [
+            {
+              "name": "data",
+              "in": "body",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "member",
+              "in": "body",
+              "type": "objectId",
+              "required": true
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Http status code response 200",
+              "content": {
+                "application/json": {
+                  "example": {
+                    "error": false,
+                    "message": "OK",
+                    "payload": {
+                      "data": "esta es una nota para pepito",
+                      "member": "6342417948131eea774e09f9",
+                      "_id": "63449516f28050c4df6ed9be",
+                      "createdAt": "2022-10-10T21:56:38.632Z",
+                      "updatedAt": "2022-10-10T21:56:38.632Z",
+                      "__v": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "delete": {
+          "tags": ["Notes"],
+          "description": "## Servicio para eliminar notas",
+          "parameters": [
+            {
+              "name": "data",
+              "in": "body",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "member",
+              "in": "body",
+              "type": "objectId",
+              "required": true
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Http status code response 200",
+              "content": {
+                "application/json": {
+                  "example": {
+                    "error": false,
+                    "message": "OK",
+                    "payload": {
+                      "data": "esta es una nota para pepito",
+                      "member": "6342417948131eea774e09f9",
+                      "_id": "63449516f28050c4df6ed9be",
+                      "createdAt": "2022-10-10T21:56:38.632Z",
+                      "updatedAt": "2022-10-10T21:56:38.632Z",
+                      "__v": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "apis": []
+}

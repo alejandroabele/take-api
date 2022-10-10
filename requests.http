@@ -1,0 +1,61 @@
+###
+POST http://localhost:9000/api/client HTTP/1.1
+Content-Type: application/json
+
+{
+    "name":"cliente",
+    "state":"mexico",
+    "pepito":"hola",
+    "address":"addres",
+    "city":"city",
+    "zip":8300,
+    "status": "private"
+}
+
+###
+PUT http://localhost:9000/api/client/634464451fcb1a17f10d92ad HTTP/1.1
+Content-Type: application/json
+
+{
+    "name":"pepito",
+    "city":"new Clity"
+}
+
+###
+DELETE http://localhost:9000/api/client/6342417948131eea774e09f9 HTTP/1.1
+Content-Type: application/json
+
+{}
+###
+POST http://localhost:9000/api/member HTTP/1.1
+Content-Type: application/json
+
+{
+    "name":"miembro 2",
+    "phoneNumber":2994648600,
+    "client":"63443463a9a540270d4c63bd",
+    "email": "alejandro@abele.com.ar"
+}
+
+###
+PUT http://localhost:9000/api/member/63443ad04a2e9ece6010e25d HTTP/1.1
+Content-Type: application/json
+
+{
+    "client":"63443d7c4a2e9ece6010e25f"
+}
+
+###
+DELETE http://localhost:9000/api/member/6342417948131eea774e09f9 HTTP/1.1
+Content-Type: application/json
+
+{}
+
+###
+POST http://localhost:9000/api/note HTTP/1.1
+Content-Type: application/json
+
+{
+    "data":"esta es una nota para pepito",
+    "member":"6342417948131eea774e09f9"
+}
