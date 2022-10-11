@@ -5,7 +5,7 @@ require("should");
 const create = (req) => {
   try {
     _validCreateData(req.body);
-    const data = new Client(req.body);
+    const data = new Client().withData(req.body);
     const client = clientSchema(data);
     return client.save();
   } catch (error) {
@@ -14,7 +14,7 @@ const create = (req) => {
 };
 const update = (req) => {
   try {
-    const data = new Client(req.body);
+    const data = new Client().withData(req.body);
     return clientSchema.findByIdAndUpdate(req.params.id, data);
   } catch (error) {
     throw error;

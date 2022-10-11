@@ -5,7 +5,7 @@ require("should");
 const create = async (req) => {
   try {
     _validCreateData(req.body);
-    const data = new Member(req.body);
+    const data = new Member().withData(req.body);
     const member = memberSchema(data);
     return member.save();
   } catch (error) {
@@ -14,7 +14,7 @@ const create = async (req) => {
 };
 const update = async (req) => {
   try {
-    const data = new Member(req.body);
+    const data = new Member().withData(req.body);
     return memberSchema.findByIdAndUpdate(req.params.id, data);
   } catch (error) {
     throw error;

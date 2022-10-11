@@ -1,5 +1,5 @@
 class Client {
-  constructor({ name, address, city, state, zip, headCount, status }) {
+  withData({ name, address, city, state, zip, headCount, status }) {
     name && (this.name = name);
     address && (this.address = address);
     city && (this.city = city);
@@ -7,6 +7,7 @@ class Client {
     zip && (this.zip = zip);
     headCount && (this.headCount = headCount);
     status && (this.status = status);
+    return this;
   }
 }
 module.exports = Client;
