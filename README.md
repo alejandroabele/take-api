@@ -19,7 +19,7 @@ El proyecto utiliza las siguientes dependencias(librerias) fundamentales para la
 Primero, ingresar a la carpeta base del directorio del proyecto:
 
 ```sh
-$ cd take_home_api
+$ cd take-api
 ```
 Segundo, instalar dependencias
 
@@ -34,7 +34,7 @@ En este archivo puede configurar:
 * Url de la base de datos
 * Puerto de la aplicación
 ###### PORT
-Cambiar valor al puerto deseado.
+Cambiar valor al puerto deseado, por defecto es el puerto 9000
 
 ###### MONGODB_URI
 Colocar la conexion en formato string a su base de datos mongo
